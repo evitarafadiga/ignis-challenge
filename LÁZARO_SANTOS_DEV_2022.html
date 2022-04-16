@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Torneio de Futebol</title>
+<script>
+
+function addTimeEstadio() {
+    let text = document.getElementById("timeestadio").value;
+    let times = text.split(/\s*\n\s*/);
+    let rodadaDupla = false;
+    let rodada;
+    let equipes = [];
+    let estados = [];
+
+    times.forEach(element => {
+        let timesestados = element.split(/\s*;\s*/);
+
+        equipes.push(timesestados[0, 0]);
+        estados.push(timesestados[0, 1]);
+        return equipes, estados;
+    });
+
+    console.log(equipes, estados);
+
+    for (let i = 0; i < equipes.length; i++) {
+        for (let j = 0; j < equipes.length; j++) {
+            if (i == j);
+            else {
+                const confronto = [equipes[i], "vs", equipes[j], "no estado - ",estados[i]];
+                console.log(confronto);
+            }
+        }
+        
+    }
+    let elt1 = document.getElementById("tabela");
+    elt1.innerHTML = times;
+}
+
+</script>
+<style>
+#tabela {
+    font: bold 12pt sans;
+    background: aliceblue;
+    padding: 10px;
+    border: solid black 2px;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<h1>Torneio CRASH</h1>
+<th>
+    <tr>
+        <div id="input-data">
+            <textarea id="timeestadio" name="timeestadio" rows="7" cols="70" required></textarea>
+            <button id="input-btn" type="submit" value="Enviar" onclick="addTimeEstadio()">Enviar</button>
+        </div>
+    </tr>
+    <tr>
+        
+    </tr>
+    </br>
+    <tr>
+        <span id="tabela"></span>
+    </tr>
+</th>
+
+<form method="POST">
+    
+</form>
+
+</body>
+
+</html>
+
